@@ -1,5 +1,3 @@
-import 'package:weather_now/models/weather_data_hourly.dart';
-
 import 'current.dart';
 import 'daily.dart';
 import 'hourly.dart';
@@ -31,7 +29,7 @@ class Weather {
         current: json['current'] == null
             ? null
             : Current.fromJson(json['current'] as Map<String, dynamic>),
-        hourly: (json['daily'] as List<dynamic>?)
+        hourly: (json['hourly'] as List<dynamic>?)
             ?.map((e) => Hourly.fromJson(e as Map<String, dynamic>))
             .toList(),
         daily: (json['daily'] as List<dynamic>?)

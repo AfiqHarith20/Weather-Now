@@ -8,7 +8,7 @@ class Daily {
   int? sunset;
   int? moonrise;
   int? moonset;
-  double? moonphase;
+  double? moonPhase;
   Temp? temp;
   FeelsLike? feelsLike;
   int? pressure;
@@ -29,7 +29,7 @@ class Daily {
     this.sunset,
     this.moonrise,
     this.moonset,
-    this.moonphase,
+    this.moonPhase,
     this.temp,
     this.feelsLike,
     this.pressure,
@@ -51,7 +51,7 @@ class Daily {
         sunset: json['sunset'] as int?,
         moonrise: json['moonrise'] as int?,
         moonset: json['moonset'] as int?,
-        moonphase: (json['moon_phase'] as num?)?.toDouble(),
+        moonPhase: (json['moon_phase'] as num?)?.toDouble(),
         temp: json['temp'] == null
             ? null
             : Temp.fromJson(json['temp'] as Map<String, dynamic>),
@@ -79,7 +79,7 @@ class Daily {
         'sunset': sunset,
         'moonrise': moonrise,
         'moonset': moonset,
-        'moon_phase': moonphase,
+        'moon_phase': moonPhase,
         'temp': temp?.toJson(),
         'feels_like': feelsLike?.toJson(),
         'pressure': pressure,

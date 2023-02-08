@@ -4,12 +4,7 @@ class FeelsLike {
   double? eve;
   double? morn;
 
-  FeelsLike({
-    this.day,
-    this.night,
-    this.eve,
-    this.morn,
-  });
+  FeelsLike({this.day, this.night, this.eve, this.morn});
 
   factory FeelsLike.fromJson(Map<String, dynamic> json) => FeelsLike(
         day: (json['day'] as num?)?.toDouble(),

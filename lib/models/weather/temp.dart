@@ -6,14 +6,7 @@ class Temp {
   double? eve;
   double? morn;
 
-  Temp({
-    this.day,
-    this.min,
-    this.max,
-    this.night,
-    this.eve,
-    this.morn,
-  });
+  Temp({this.day, this.min, this.max, this.night, this.eve, this.morn});
 
   factory Temp.fromJson(Map<String, dynamic> json) => Temp(
         day: (json['day'] as num?)?.toDouble(),

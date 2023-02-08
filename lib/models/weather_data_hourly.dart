@@ -1,16 +1,14 @@
 import 'package:weather_now/models/weather_data_current.dart';
 
 class WeatherDataHourly {
-  late List<Hourly> hourly;
+  List<Hourly> hourly;
 
   WeatherDataHourly({required this.hourly});
 
   factory WeatherDataHourly.fromJson(Map<String, dynamic> json) =>
       WeatherDataHourly(
-        hourly: List<Hourly>.from(
-          json['hourly'].map((e) => Hourly.fromJson(e)),
-        ),
-      );
+          hourly:
+              List<Hourly>.from(json['hourly'].map((e) => Hourly.fromJson(e))));
 }
 
 class Hourly {

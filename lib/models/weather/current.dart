@@ -40,7 +40,7 @@ class Current {
         sunrise: json['sunrise'] as int?,
         sunset: json['sunset'] as int?,
         temp: (json['temp'] as num?)?.toDouble(),
-        feelsLike: (json['feelsLike'] as num?)?.toDouble(),
+        feelsLike: (json['feels_like'] as num?)?.toDouble(),
         pressure: json['pressure'] as int?,
         humidity: json['humidity'] as int?,
         dewPoint: (json['dew_point'] as num?)?.toDouble(),
@@ -70,6 +70,6 @@ class Current {
         'wind_speed': windSpeed,
         'wind_deg': windDeg,
         'wind_gust': windGust,
-        'weather': weather?.map((e) => e.toJson()).toList()
+        'weather': weather?.map((e) => e.toJson()).toList(),
       };
 }
