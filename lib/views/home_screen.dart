@@ -10,21 +10,21 @@ import 'package:weather_now/widget/header_widget.dart';
 import 'package:weather_now/widget/hourly_data_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  //call location
   final GlobalController globalController =
       Get.put(GlobalController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Obx(
-        () => globalController.checkLoading().isTrue
+      body: SafeArea(
+        child: Obx(() => globalController.checkLoading().isTrue
             ? const Center(
                 child: CircularProgressIndicator(),
               )
@@ -45,22 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text(
                         'Today',
                         style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
                     HourlyDataWidget(
-                      weatherDataHourly:
-                          globalController.getWeatherData().getHourlyWeather(),
-                    ),
+                        weatherDataHourly: globalController
+                            .getWeatherData()
+                            .getHourlyWeather()),
                     DailyDataForecast(
-                      weatherDataDaily: globalController.getWeatherData(),
-                    )
+                        weatherDataDaily:
+                            globalController.getWeatherData().getDailyWeather())
                   ],
                 ),
-              ),
+              )),
       ),
-    ));
+    );
   }
 }
